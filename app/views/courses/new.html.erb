@@ -1,0 +1,6 @@
+<%=form_for @course, method: :post, local: true do |form| %>
+  name<%= form.text_field :name %>
+  totalhours<%= form.number_field :totalhours %>
+<%= form.submit "create"%>
+<% end %>
+

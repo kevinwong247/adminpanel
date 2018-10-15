@@ -1,0 +1,7 @@
+ <%=form_for @cohort, method: :post, local: true do |form| %>
+  name<%= form.text_field :name %>
+  Startdate<%= form.date_field :startdate %>
+  Enddate<%= form.date_field :enddate%>
+  <%= form.text_field :course_id, value: @course_id %>
+  <%= form.submit "create"%>
+<% end %>

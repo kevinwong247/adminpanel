@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AdminPanel3</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+       <div class="nav-wrapper blue">
+      <a href="/" class="brand-logo">Admin Panel</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/students">Student</a></li>
+        <li><a href="/instructors">Instructor</a></li>
+        <li><a href="/cohorts">Cohort</a></li>
+        <li><a href="/courses">Courses</a></li>
+      </ul>
+    </div>
+  </nav>
+   <%# ----- add these lines here: ----- %>
+	
+    <% if current_user %>
+      <!-- current_user will return true if a user is logged in -->
+      <%= "Logged in as #{current_user.email}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+    <% else %>
+      <!-- not logged in -->
+      <%= link_to 'Home', root_path %> | <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up', new_user_path %>
+    <% end %>
+    <hr>
+	
+    <%# ----- end of added lines ----- %>
+	
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+	
+    <% if alert %>
+      <%= alert %>
+    <% end %>
+	
+    <%= yield %>
+  </body>
+</html>

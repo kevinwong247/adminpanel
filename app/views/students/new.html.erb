@@ -1,0 +1,8 @@
+<%=form_for @student, method: :post, local: true do |form| %>
+  Firstname<%= form.text_field :firstname %>
+  Lastname<%= form.text_field :lastname %>
+  Age <%= form.number_field :age %>
+  Educationlevel <%= form.text_field :educationlevel%>
+  <%=form.submit %>
+<% end %>
+

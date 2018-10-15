@@ -1,0 +1,33 @@
+ <div class="container">
+    <h5>Students</h5>
+    <p>These are all our students</p>
+    
+<table class="centered">
+        <thead>
+          <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Education Level</th>
+              <th>Delete</th>
+              <th>Edit</th>
+          </tr>
+        </thead>
+        <%@students.each do |student|%>
+            <tbody>
+                <tr>
+                    <td><%=student.firstname%></td>
+                    <td><%=student.lastname%></td>
+                    <td><%=student.educationlevel%></td>
+                    <th><%= link_to "Show ", student_path(student) %> </th>
+                    <th><%= link_to "Edit ", edit_student_path(student) %> </th>
+                    <th><%= link_to "Destroy ", student_path(student), method: :delete %> </th>
+                </tr>
+        <%end%>
+          
+        </tbody>
+      </table>
+    </div>
+    <br>
+   <a href="/students/new">Add Student</a>
+          
+         

@@ -1,0 +1,10 @@
+<%=form_for @instructor, method: :post, local: true do |form| %>
+  Firstname<%= form.text_field :firstname %>
+  Lastname<%= form.text_field :lastname %>
+  Age <%= form.number_field :age %>
+  Educationlevel <%= form.text_field :educationlevel%>
+  Salary <%= form.text_field :salary%>
+  cohort <%= form.text_field :cohort%>
+  <%=form.submit %>
+<% end %>
+

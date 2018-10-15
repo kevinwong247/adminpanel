@@ -1,0 +1,29 @@
+<div class="container">
+    <h5>Cohorts</h5>
+    <p>These are the cohorts</p>
+    
+<table class="centered">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Total Hours</th>
+              <th>Created at</th>
+          </tr>
+        </thead>
+        <%@cohorts.each do |cohort|%>
+            <tbody>
+                <tr>
+                    <td><%=cohort.name%></td>
+                    <td><%=cohort.startdate%></td>
+                    <td><%=cohort.enddate%></td>
+                    <th><%= link_to "Show ", cohort_path(cohort) %> </th>
+                    <th><%= link_to "Edit ", edit_cohort_path(cohort) %> </th>
+                    <th><%= link_to "Destroy ", cohort_path(cohort), method: :delete %> </th>
+                </tr>
+        <%end%>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <a href="/cohorts/new">Add Cohorts</a>

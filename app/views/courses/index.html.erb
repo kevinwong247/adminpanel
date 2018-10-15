@@ -1,0 +1,32 @@
+<div class="container">
+    <h5>Courses</h5>
+    <p>These are all the courses we offer</p>
+    
+<table class="centered">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Total Hours</th>
+              <th>Created at</th>
+              <th>Delete</th>
+              <th>Edit</th>
+          </tr>
+        </thead>
+        <%@courses.each do |course|%>
+            <tbody>
+                <tr>
+                    <td><%=course.name%></td>
+                    <td><%=course.totalhours%></td>
+                    <td><%=course.created_at%></td>
+                    <th><%= link_to "Show ", course_path(course) %> </th>
+                    <th><%= link_to "Edit ", edit_course_path(course) %> </th>
+                    <th><%= link_to "Destroy ", course_path(course), method: :delete %> </th>
+                </tr>
+        <%end%>
+          
+        </tbody>
+      </table>
+    </div>
+
+<a href="/courses/new">Add Courses</a>
+
